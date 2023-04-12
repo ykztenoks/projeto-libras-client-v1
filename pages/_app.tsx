@@ -1,6 +1,10 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-
+import "../styles/tailwind.css";
+import type { AppProps } from "next/app";
+import { AuthContextComponent } from "./context/authContext";
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <AuthContextComponent>
+      <Component {...pageProps} />
+    </AuthContextComponent>
+  );
 }
